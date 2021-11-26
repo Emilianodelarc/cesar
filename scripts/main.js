@@ -1,25 +1,45 @@
+let baseCharsSelected = 0; // Variable bandera utilizada en el if para determinar los 2 casos del click en la imagen.
+let totalPrice = 0; // Variable utilizada para contabilizar la cantidad de dinero que acumula el usuario en su selección.
+let totalHours = 0; // Variable utilizada para contabilizar las horas de juego que acumula el usuario en su selección.
+let baseGamePrice = 690; //Si el juego base cambia de precio en algún momento, actualizar esta variable a su precio correcto.
 //Impresión de las cards correspondientes al paquete base del juego.
 
 localStorage.clear();
 
 for (const character of baseGameCharacters) {
   $("#cards")
-    .append(`<div class="cardsBase ${character.color} m-3" id=${character.id}>
+    .append(`<div class="cardsBase ${character.color} m-3" id=1${character.id}>
   <img src= ${character.img} class="clickBase" id=${character.id} />
-  <p class = "nombrePersonajes">  ${character.name} </p></div>`);
+  <p class = "nombrePersonajes">  ${character.name} </p>
+  <p class = "price${character.id}">Bundle price: $${baseGamePrice} </p></div>`);
+
+  $(`#1${character.id}`).mouseover(function () {
+    $(`#${character.id}`).css('opacity','0.3')
+    // $('.nombrePersonajes').css('display', 'block')
+    $(`.price${character.id}`).css({ 'color': 'white',
+      'text-align': 'center',
+      'position': 'relative',
+      'top':'-112px',
+      'display':'block'})
+  })
+  $(`#1${character.id}`).mouseout(function () {
+    $(`#${character.id}`).css('opacity','1')
+    // $('.nombrePersonajes').css('display', 'none')
+    $(`.price${character.id}`).css('display','none')
+  })
+
 }
 
 $(".clickBase").on("click", clickOnBase); //Llamado a la función para agregar/quitar los personajes base del cálculo.
 /*$(".cardsBase").on("mouseover", description);*/ //Llamado a la función que muestra la historia del personaje al hacer mouse over
-let baseCharsSelected = 0; // Variable bandera utilizada en el if para determinar los 2 casos del click en la imagen.
-let totalPrice = 0; // Variable utilizada para contabilizar la cantidad de dinero que acumula el usuario en su selección.
-let totalHours = 0; // Variable utilizada para contabilizar las horas de juego que acumula el usuario en su selección.
-let baseGamePrice = 690; //Si el juego base cambia de precio en algún momento, actualizar esta variable a su precio correcto.
 
 function clickOnBase(e) {
-  let personajeClickeado = baseGameCharacters.find(
-    (personaje) => personaje.id == e.target.id
-  );
+  console.log(baseGameCharacters);
+  console.log(e.target.id);
+  let personajeClickeado = baseGameCharacters.find((personaje) => personaje.id == e.target.id);
+
+  console.log(personajeClickeado);
+
   if (personajeClickeado.color == "colorPago") {
     $(".colorPago");
   }

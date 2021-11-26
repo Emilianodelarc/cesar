@@ -1,24 +1,58 @@
+@font-face {
+  font-family: Fixture-Bold;
+  src: url(Fixture-Bold.otf);
+}
+body{
+  background-color: #1f2020;
+}
+.navbar-nav{
+  padding-inline-start: 40px
+}
+.nav-link{
+  color: white !important;
+  font-family: Fixture-Bold;
+  font-weight: 400;
+  font-size: 1.25em;
+  line-height: .9;
+  font-stretch: condensed;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 10px hsl(0deg 0% 100% / 25%), -1px -1px 10px hsl(0deg 0% 100% / 25%);
+}
 #cards {
   display: inline-flex;
   flex-direction: row;
   flex-wrap: wrap;
+  
 }
 
-.descripcion {
-  width: 300px;
-  display: none;
+.descriptions {
+  /* width: 300px; */
+  /* display: none; */
+  color: white;
 }
 
 .titulo {
   text-align: center;
+  color: white;
 }
 
 .nombrePersonajes {
+  color: white;
   text-align: center;
   font-weight: bold;
   font-size: 18px;
+  /* position: relative;
+  top:-120px;
+  display: none; */
 }
-
+.pricebill{
+  color: white;
+  text-align: center;
+  position: relative;
+  top:-112px;
+  
+}
 #paidOnly {
   display: inline-flex;
   flex-direction: row;
@@ -54,7 +88,9 @@
 .resultsColor {
   color: white;
 }
-
+.btn{
+  border: solid 1px white;
+}
 #imgLoading{
   text-align: center;
 }
