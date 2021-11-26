@@ -1,0 +1,63 @@
+#cards {
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.descripcion {
+  width: 300px;
+  display: none;
+}
+
+.titulo {
+  text-align: center;
+}
+
+.nombrePersonajes {
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+#paidOnly {
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+#grindeable {
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+#perksChild {
+  text-align: center;
+  justify-content: space-around;
+}
+
+.card {
+  justify-content: center;
+}
+
+#botonModal {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.mostRecentResults {
+  padding-top: 20px;
+  color: blanchedalmond;
+}
+
+.resultsColor {
+  color: white;
+}
+
+#imgLoading{
+  text-align: center;
+}
+#imgLoading img{
+  width: 100%;
+}
