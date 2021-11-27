@@ -1,7 +1,3 @@
-// alert(
-//   "In order to properly view this page you need a CORS plug-in as it uses a third party API with limited access"
-// );
-
 let Perks = []
 
 $('#perksChild').append($('<img>').attr({src:'../imgHeader/loading.gif', id:"loading"}))

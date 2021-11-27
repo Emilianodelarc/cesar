@@ -18,12 +18,10 @@ for (const character of baseGameCharacters) {
 
   $(`#1${character.id}`).mouseover(function () {
     $(`#${character.id}`).css('opacity','0.3')
-    // $('.nombrePersonajes').css('display', 'block')
     $(`.price${character.id}`).show()
   })
   $(`#1${character.id}`).mouseout(function () {
     $(`#${character.id}`).css('opacity','1')
-    // $('.nombrePersonajes').css('display', 'none')
     $(`.price${character.id}`).hide()
   })
 
@@ -69,12 +67,10 @@ for (const character of paidOnlyCharacters) {
 
   $(`#2${character.id}`).mouseover(function () {
     $(`#${character.id}`).css('opacity','0.3')
-    // $('.nombrePersonajes').css('display', 'block')
     $(`.price${character.id}`).show()
   })
   $(`#2${character.id}`).mouseout(function () {
     $(`#${character.id}`).css('opacity','1')
-    // $('.nombrePersonajes').css('display', 'none')
     $(`.price${character.id}`).hide()
   })
 }
@@ -115,12 +111,10 @@ for (const character of grindCharacters) {
 
   $(`#3${character.id}`).mouseover(function () {
     $(`#${character.id}`).css('opacity','0.3')
-    // $('.nombrePersonajes').css('display', 'block')
     $(`.price${character.id}`).show()
   })
   $(`#3${character.id}`).mouseout(function () {
     $(`#${character.id}`).css('opacity','1')
-    // $('.nombrePersonajes').css('display', 'none')
     $(`.price${character.id}`).hide()
   })
 }
@@ -189,9 +183,7 @@ $("#botonModal").append(
 
 function localStorageRefresh() {
   let priceTotal = localStorage.getItem("totalPrice");
-  console.log(priceTotal);
   let finalHours = localStorage.getItem("totalHours");
-  //console.log(finalHours);
   $("#finalPrice").html(priceTotal);
   $("#finalHours").html(finalHours);
 }
