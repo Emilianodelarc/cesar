@@ -115,13 +115,7 @@ body{
   top:-120px;
   display: none; */
 }
-.pricebill{
-  color: white;
-  text-align: center;
-  position: relative;
-  top:-112px;
-  
-}
+
 #paidOnly {
   display: inline-flex;
   flex-direction: row;

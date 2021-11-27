@@ -8,10 +8,10 @@ localStorage.clear();
 
 for (const character of baseGameCharacters) {
   $("#cards")
-    .append(`<div class="cardsBase ${character.color} m-3" id=1${character.id}>
+    .append(`<div><div class="cardsBase ${character.color} m-3" id=1${character.id}>
   <img src= ${character.img} class="clickBase" id=${character.id} />
   <p class = "nombrePersonajes">  ${character.name} </p>
-  <p class = "price${character.id}">Bundle price: $${baseGamePrice} </p></div>`);
+  <p class = "price${character.id}">Bundle price: $${baseGamePrice} </p></div></div>`);
 
   $(`#1${character.id}`).mouseover(function () {
     $(`#${character.id}`).css('opacity','0.3')
@@ -20,6 +20,7 @@ for (const character of baseGameCharacters) {
       'text-align': 'center',
       'position': 'relative',
       'top':'-112px',
+      'margin-bottom':'-100px',
       'display':'block'})
   })
   $(`#1${character.id}`).mouseout(function () {
@@ -34,8 +35,6 @@ $(".clickBase").on("click", clickOnBase); //Llamado a la función para agregar/q
 /*$(".cardsBase").on("mouseover", description);*/ //Llamado a la función que muestra la historia del personaje al hacer mouse over
 
 function clickOnBase(e) {
-  console.log(baseGameCharacters);
-  console.log(e.target.id);
   let personajeClickeado = baseGameCharacters.find((personaje) => personaje.id == e.target.id);
 
   console.log(personajeClickeado);
@@ -63,9 +62,26 @@ function clickOnBase(e) {
 }
 
 for (const character of paidOnlyCharacters) {
-  $("#paidOnly").append(`<div class="cardsPaid m-3" id=${character.id}>
+  $("#paidOnly").append(`<div><div class="cardsPaid m-3" id=2${character.id}>
   <img src= ${character.img} class="clickPaid" id=${character.id} />
-  <p class = "nombrePersonajes">  ${character.name} </p></div>`);
+  <p class = "nombrePersonajes">  ${character.name} </p>
+  <p class = "price${character.id}">Bundle price: $${baseGamePrice} </p></div></div>`);
+
+  $(`#2${character.id}`).mouseover(function () {
+    $(`#${character.id}`).css('opacity','0.3')
+    // $('.nombrePersonajes').css('display', 'block')
+    $(`.price${character.id}`).css({ 'color': 'white',
+      'text-align': 'center',
+      'position': 'relative',
+      'top':'-112px',
+      'margin-bottom':'-100px',
+      'display':'block'})
+  })
+  $(`#2${character.id}`).mouseout(function () {
+    $(`#${character.id}`).css('opacity','1')
+    // $('.nombrePersonajes').css('display', 'none')
+    $(`.price${character.id}`).css('display','none')
+  })
 }
 
 $(".clickPaid").on("click", clickOnPaid);
@@ -94,9 +110,26 @@ function clickOnPaid(e) {
 }
 
 for (const character of grindCharacters) {
-  $("#grindeable").append(`<div class="cardsPaid m-3" id=${character.id}>
+  $("#grindeable").append(`<div><div class="cardsPaid m-3" id=3${character.id}>
   <img src= ${character.img} class="clickGrind" id=${character.id} />
-  <p class = "nombrePersonajes">  ${character.name} </p></div>`);
+  <p class = "nombrePersonajes">  ${character.name} </p>
+  <p class = "price${character.id}">Bundle price: $${baseGamePrice}</p></div></div>`);
+
+  $(`#3${character.id}`).mouseover(function () {
+    $(`#${character.id}`).css('opacity','0.3')
+    // $('.nombrePersonajes').css('display', 'block')
+    $(`.price${character.id}`).css({ 'color': 'white',
+      'text-align': 'center',
+      'position': 'relative',
+      'top':'-112px',
+      'margin-bottom':'-100px',
+      'display':'block'})
+  })
+  $(`#3${character.id}`).mouseout(function () {
+    $(`#${character.id}`).css('opacity','1')
+    // $('.nombrePersonajes').css('display', 'none')
+    $(`.price${character.id}`).css('display','none')
+  })
 }
 
 $(".clickGrind").on("click", clickOnGrind);
