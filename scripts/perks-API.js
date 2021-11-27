@@ -6,7 +6,6 @@ let Perks = []
 
 $('#perksChild').append($('<img>').attr({src:'../imgHeader/loading.gif', id:"loading"}))
 
-// Perks.length == 0 && alert('Debera instalar Plugins CORS') 
 
 setTimeout(() => {
     $.ajax({

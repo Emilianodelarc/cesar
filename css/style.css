@@ -1,6 +1,6 @@
 @font-face {
   font-family: Fixture-Bold;
-  src: url(Fixture-Bold.otf);
+  src: url(../fonts/Fixture-Bold.otf);
 }
 body{
   background-color: #1f2020;

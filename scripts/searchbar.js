@@ -2,9 +2,7 @@
 $("#search").keyup(function (e) {
   let resPerks = JSON.parse(localStorage.getItem('perks'))
   let variable = $(e.target).val().toLowerCase();
-  console.log(variable);
   let dato = resPerks.filter(el => el.perk_name.toLowerCase().includes(variable))
-  console.log(dato);
   $("#perksChild").empty();
   dato.forEach(perks => {
     $("#perksChild").append(`<div class="card mb-3" style="max-width: 540px;">
