@@ -19,7 +19,9 @@ body{
   text-transform: uppercase;
   text-shadow: 1px 1px 10px hsl(0deg 0% 100% / 25%), -1px -1px 10px hsl(0deg 0% 100% / 25%);
 }
-
+.navbar-collapse{
+  justify-content: space-around;
+}
 .release{
   display: flex;
   justify-content: center;
