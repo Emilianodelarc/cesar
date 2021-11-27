@@ -1,4 +1,4 @@
-let end = new Date('12/25/2021 9:30 AM');
+let end = new Date('12/31/2021 9:30 AM');
 
 let _second = 1000;
 let _minute = _second * 60;
@@ -10,10 +10,8 @@ function showRemaining() {
     let now = new Date();
     let distance = end - now;
     if (distance < 0) {
-
         clearInterval(timer);
         window.open('https://store.playstation.com/en-us/product/UP3509-PPSA02048_00-DEADBYDAYLIGHT00');
-
         return;
     }
     let days = Math.floor(distance / _day);

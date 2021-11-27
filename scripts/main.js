@@ -65,7 +65,7 @@ for (const character of paidOnlyCharacters) {
   $("#paidOnly").append(`<div><div class="cardsPaid m-3" id=2${character.id}>
   <img src= ${character.img} class="clickPaid" id=${character.id} />
   <p class = "nombrePersonajes">  ${character.name} </p>
-  <p class = "price${character.id}">Bundle price: $${baseGamePrice} </p></div></div>`);
+  <p class = "price${character.id}">Price: $${character.price} </p></div></div>`);
 
   $(`#2${character.id}`).mouseover(function () {
     $(`#${character.id}`).css('opacity','0.3')
@@ -113,7 +113,8 @@ for (const character of grindCharacters) {
   $("#grindeable").append(`<div><div class="cardsPaid m-3" id=3${character.id}>
   <img src= ${character.img} class="clickGrind" id=${character.id} />
   <p class = "nombrePersonajes">  ${character.name} </p>
-  <p class = "price${character.id}">Bundle price: $${baseGamePrice}</p></div></div>`);
+  <p class = "price${character.id}">or Hours: ${character.hours}</p>
+  <p class = "price${character.id}">Price: $${character.price}</p></div></div>`);
 
   $(`#3${character.id}`).mouseover(function () {
     $(`#${character.id}`).css('opacity','0.3')
