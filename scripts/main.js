@@ -7,12 +7,13 @@ let baseGamePrice = 690; //Si el juego base cambia de precio en algún momento, 
 localStorage.clear();
 
 for (const character of baseGameCharacters) {
+  
   $("#cards")
     .append(`<div><div class="cardsBase ${character.color} m-3" id=1${character.id}>
   <img src= ${character.img} class="clickBase" id=${character.id} />
   <p class = "nombrePersonajes">  ${character.name} </p>
   <p class = "price${character.id}">Bundle price: $${baseGamePrice} </p></div></div>`);
-
+  $(`.price${character.id}`).css('margin-bottom','-100px')
   $(`#1${character.id}`).mouseover(function () {
     $(`#${character.id}`).css('opacity','0.3')
     // $('.nombrePersonajes').css('display', 'block')
