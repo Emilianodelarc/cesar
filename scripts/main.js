@@ -26,6 +26,7 @@ for (const character of baseGameCharacters) {
   $(`#1${character.id}`).mouseout(function () {
     $(`#${character.id}`).css('opacity','1')
     // $('.nombrePersonajes').css('display', 'none')
+    $(`.price${character.id}`).css('margin-bottom','-100px')
     $(`.price${character.id}`).css('display','none')
   })
 

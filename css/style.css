@@ -164,6 +164,7 @@ body{
   background-color: #1f2020;
 }
 .card-title{
+  margin-bottom: -100px;
   color: white;
 }
 .card-text{
