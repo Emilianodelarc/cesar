@@ -12,23 +12,19 @@ for (const character of baseGameCharacters) {
     .append(`<div><div class="cardsBase ${character.color} m-3" id=1${character.id}>
   <img src= ${character.img} class="clickBase" id=${character.id} />
   <p class = "nombrePersonajes">  ${character.name} </p>
-  <p class = "price${character.id}">Bundle price: $${baseGamePrice} </p></div></div>`);
-  $(`.price${character.id}`).css('margin-bottom','-100px')
+  <p class = "price${character.id}" id='priceS'>Bundle price: $${baseGamePrice} </p></div></div>`);
+
+  $(`.price${character.id}`).hide()
+
   $(`#1${character.id}`).mouseover(function () {
     $(`#${character.id}`).css('opacity','0.3')
     // $('.nombrePersonajes').css('display', 'block')
-    $(`.price${character.id}`).css({ 'color': 'white',
-      'text-align': 'center',
-      'position': 'relative',
-      'top':'-112px',
-      'margin-bottom':'-100px',
-      'display':'block'})
+    $(`.price${character.id}`).show()
   })
   $(`#1${character.id}`).mouseout(function () {
     $(`#${character.id}`).css('opacity','1')
     // $('.nombrePersonajes').css('display', 'none')
-    $(`.price${character.id}`).css('margin-bottom','-100px')
-    $(`.price${character.id}`).css('display','none')
+    $(`.price${character.id}`).hide()
   })
 
 }
@@ -67,22 +63,19 @@ for (const character of paidOnlyCharacters) {
   $("#paidOnly").append(`<div><div class="cardsPaid m-3" id=2${character.id}>
   <img src= ${character.img} class="clickPaid" id=${character.id} />
   <p class = "nombrePersonajes">  ${character.name} </p>
-  <p class = "price${character.id}">Price: $${character.price} </p></div></div>`);
+  <p class = "price${character.id}" id='priceS'>Price: $${character.price} </p></div></div>`);
+
+  $(`.price${character.id}`).hide()
 
   $(`#2${character.id}`).mouseover(function () {
     $(`#${character.id}`).css('opacity','0.3')
     // $('.nombrePersonajes').css('display', 'block')
-    $(`.price${character.id}`).css({ 'color': 'white',
-      'text-align': 'center',
-      'position': 'relative',
-      'top':'-112px',
-      'margin-bottom':'-100px',
-      'display':'block'})
+    $(`.price${character.id}`).show()
   })
   $(`#2${character.id}`).mouseout(function () {
     $(`#${character.id}`).css('opacity','1')
     // $('.nombrePersonajes').css('display', 'none')
-    $(`.price${character.id}`).css('display','none')
+    $(`.price${character.id}`).hide()
   })
 }
 
@@ -115,23 +108,20 @@ for (const character of grindCharacters) {
   $("#grindeable").append(`<div><div class="cardsPaid m-3" id=3${character.id}>
   <img src= ${character.img} class="clickGrind" id=${character.id} />
   <p class = "nombrePersonajes">  ${character.name} </p>
-  <p class = "price${character.id}">or Hours: ${character.hours}</p>
-  <p class = "price${character.id}">Price: $${character.price}</p></div></div>`);
+  <p class = "price${character.id}" id='priceS'>or Hours: ${character.hours}</p>
+  <p class = "price${character.id}" id='priceS'>Price: $${character.price}</p></div></div>`);
+
+  $(`.price${character.id}`).hide()
 
   $(`#3${character.id}`).mouseover(function () {
     $(`#${character.id}`).css('opacity','0.3')
     // $('.nombrePersonajes').css('display', 'block')
-    $(`.price${character.id}`).css({ 'color': 'white',
-      'text-align': 'center',
-      'position': 'relative',
-      'top':'-112px',
-      'margin-bottom':'-100px',
-      'display':'block'})
+    $(`.price${character.id}`).show()
   })
   $(`#3${character.id}`).mouseout(function () {
     $(`#${character.id}`).css('opacity','1')
     // $('.nombrePersonajes').css('display', 'none')
-    $(`.price${character.id}`).css('display','none')
+    $(`.price${character.id}`).hide()
   })
 }
 
@@ -176,23 +166,24 @@ function clickOnGrind(e) {
 
 $("#botonModal").append(
   `<div>
-        <button type='button' class="btn btn-warning btn-dark resultsButton" data-bs-toggle="modal" data-bs-target="#modalResults">Sacrifice Souls to the Entity (Calculate Results)</button>
+      <button type='button' class="btn btn-warning btn-dark resultsButton" data-bs-toggle="modal" data-bs-target="#modalResults">
+        <img src="../imgHeader/iconPerks.png" class="iconModal">
+        Sacrifice Souls to the Entity (Calculate Results)</button>
       </div>  
 
       <div class="modal fade" id="modalResults" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
-          <div class="modal-content">
+          <div class="modal-content result">
           <div class="modal-header">
-          <h5 class="modal-title">You will need the following to feed the entity...</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <img src="../imgHeader/LogoResults.png" class="imgModal2">
+          <h5 class="modal-title modal2">You will need the following to feed the entity...</h5>
+          <button type="button" class="btn-close close2" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
-          <div class="modal-body">
+          <div class="modal-body modal2B">
           <p>"You will have to spend <span id="finalPrice">${totalPrice}</span> pesos"</p>
           <p>"You will have to run from the killers or kill for about <span id="finalHours">${totalHours}</span>"</p>
           <p>Dare to get into the fog?</p>
-      </div>
-      <div class="modal-footer">
-      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="reset">Close</button>                                                            
+      </div>                                                        
     </div>`
 );
 
