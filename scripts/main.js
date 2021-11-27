@@ -33,24 +33,18 @@ $(".clickBase").on("click", clickOnBase); //Llamado a la función para agregar/q
 function clickOnBase(e) {
   let personajeClickeado = baseGameCharacters.find((personaje) => personaje.id == e.target.id);
 
-  console.log(personajeClickeado);
-
   if (personajeClickeado.color == "colorPago") {
     $(".colorPago");
   }
   if (baseCharsSelected == 0) {
-    console.log(e.target);
     totalPrice = totalPrice + baseGamePrice;
-    console.log(totalPrice);
     baseCharsSelected = 1;
     $(".color").css("box-shadow", "1px 1px 15px 9px rgba(221,227,61,0.75)");
     localStorage.setItem("totalPrice", totalPrice);
     localStorageRefresh();
   } else {
-    console.log(e.target);
     $(".color").css("box-shadow", "none");
     totalPrice = totalPrice - baseGamePrice;
-    console.log(totalPrice);
     baseCharsSelected = 0;
     localStorage.setItem("totalPrice", totalPrice);
     localStorageRefresh();
@@ -82,18 +76,14 @@ function clickOnPaid(e) {
     (personaje) => personaje.id == e.target.id
   );
   if (personajePagoClickeado.selected == "0") {
-    console.log(e.target);
     totalPrice = totalPrice + personajePagoClickeado.price;
-    console.log(totalPrice);
     $(e.target).css("box-shadow", "1px 1px 15px 9px rgba(221,227,61,0.75)");
     personajePagoClickeado.selected = "1";
     localStorage.setItem("totalPrice", totalPrice);
     localStorageRefresh();
   } else {
-    console.log(e.target);
     $(e.target).css("box-shadow", "none");
     totalPrice = totalPrice - personajePagoClickeado.price;
-    console.log(totalPrice);
     personajePagoClickeado.selected = "0";
     localStorage.setItem("totalPrice", totalPrice);
     localStorageRefresh();
@@ -126,31 +116,22 @@ function clickOnGrind(e) {
     (personaje) => personaje.id == e.target.id
   );
   if (personajeGrindClickeado.selected == "0") {
-    console.log(e.target);
     totalPrice = totalPrice + personajeGrindClickeado.price;
-    console.log(totalPrice);
-    console.log(totalHours);
     $(e.target).css("box-shadow", "1px 1px 15px 9px rgba(221,227,61,0.75)");
     personajeGrindClickeado.selected = "1";
     localStorage.setItem("totalPrice", totalPrice);
     localStorageRefresh();
   } else if (personajeGrindClickeado.selected == "1") {
-    console.log(e.target);
     totalPrice = totalPrice - personajeGrindClickeado.price;
     totalHours = totalHours + personajeGrindClickeado.hours;
     $(e.target).css("box-shadow", "1px 1px 15px 9px rgba(160, 44, 227,0.75)");
-    console.log(totalPrice);
-    console.log(totalHours);
     personajeGrindClickeado.selected = "2";
     localStorage.setItem("totalPrice", totalPrice);
     localStorage.setItem("totalHours", totalHours);
     localStorageRefresh();
   } else {
-    console.log(e.target);
     $(e.target).css("box-shadow", "none");
     totalHours = totalHours - personajeGrindClickeado.hours;
-    console.log(totalPrice);
-    console.log(totalHours);
     personajeGrindClickeado.selected = "0";
     localStorage.setItem("totalPrice", totalPrice);
     localStorage.setItem("totalHours", totalHours);
